@@ -1,0 +1,22 @@
+
+\d - matches digits b/w 0 to 9
+\D - macthes !a digit
+\w - word char match(a-z,A-Z,0-9 or _)
+\W - !\w (ie spl characters and \n)
+
+\bword_to_match - word boundary - words end with \n or space only.
+
+\Bword_to_match - not a word boundary - selects all words that match word_to_match iff they are not seperated by \n or space ie not a word boundary
+
+^word_to_match - match sentence if begenning of a string begins with word_to_match
+
+$word_to_match -match string if end of string is word_to_match
+
+\s - match whitespaces like space,\n
+\S - not a white space
+
+[to_match] - character set to be matched for a single character
+
+subset_expr{n} - number of subset_expr to be matched
+
+[^char] - means dont match the char
