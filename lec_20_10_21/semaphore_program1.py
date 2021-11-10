@@ -1,7 +1,7 @@
 from threading import Semaphore, Thread
 from time import sleep, time
 
-s = Semaphore(1)
+s = Semaphore(1) #default is 1
 
 def f1():
     print("func1 starting")
@@ -55,5 +55,5 @@ while not s.aqcuire(blocking=False):
     #blocking=False=>no blocking but ret False immediately
     print("func2 blocked since no semaphore avaiable")
     sleep(1)
-    
+
 '''
