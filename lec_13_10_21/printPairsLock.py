@@ -12,7 +12,7 @@ sleepTime=0.5
 def capPrinter():
     s1 = 'AABBCCDDEEFF'
     for i in s1:
-        #acquire lock before printing each pair so that it is not preemted
+        #acquire lock before printing each pair so that it is not preemted in between
         lock.acquire()
         print(i,end="")
         sleep(sleepTime)

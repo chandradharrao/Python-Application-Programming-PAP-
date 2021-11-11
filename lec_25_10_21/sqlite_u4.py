@@ -1,19 +1,18 @@
-#sqlite : transactonal sql engine
+#sqlite : database storage engine which CAN be compared against PostgreSQL and MySQL
 '''
-simple programming database only..
-NOT for **client-server architecture**
-only for single client and server architecture
+Recommended for simple database programming only..
+NOT for multiple **client-server architecture** like webapps but only for single local client and server architecture.
 
 
 sqlite3.connect() - connection to the database eg:foodsystem.db on the disk.
 
-use ":memory" to ceate db in RAM
+use ":memory" to ceate db in RAM with unique id
 
-connection.cursor() - Intermediate object - cursor to execute commands on the dataabse on the existing connection
+connection.cursor() - Intermediate object - cursor to execute commands on the databse on the existing connection
 
 cursor.execute() - execute sql stateemnts 
 
-connection.commit() - commit transaction : if not called,then ot wont be commited
+connection.commit() - commit transaction : if not called,then it wont be commited
 
 connection.rollback() - rollback to the last successfull commit
 

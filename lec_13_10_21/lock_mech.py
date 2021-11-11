@@ -1,14 +1,16 @@
 from multiprocessing import Lock,Process,Value
-from os import rename
-from time import sleep, time
+from time import sleep
 
-lock = Lock() #lock object needs to be acquired BEFORE making changes to the shared var and released AFTER making changes.Also we cannot declare it inside the main function but SHOULD be a global variable
+lock = Lock() #lock object needs to be acquired BEFORE making changes to the shared var and released AFTER making changes.Also we CANNOT declare a Lock type object it inside the main function but SHOULD be a global variable
 
 def deposit(total):
     for i in range(100):
         sleep(0.01)
+
+        #acquire lock and perform Critical Section Code
         lock.acquire()
         total.value+=5
+        #release lock after operation
         lock.release()
     return total
 

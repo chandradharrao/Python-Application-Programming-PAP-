@@ -3,7 +3,7 @@ process : program under execution.
 Code + PC + registers + stacks and so one..
 
 thread : lightweight process handled by scheduler
-share code segment but has its own
+share code segment,data segment,files etc but has its own register stack,counter etc
 
 ti = threading.Thread(target=func_pointer,args=(params_to_func))
 ti.start()
@@ -29,7 +29,7 @@ def multiply(x,y):
     print(x*y)
 
 if __name__=="__main__":
-    t3 = threading.Thread(target=multiply,args=(10,20))
+    t3 = threading.Thread(target=multiply,args=(10,20)) #argument has to be an iterable
     t1 = threading.Thread(target=printCubes,args=(12,))
     t2 = threading.Thread(target=printSqr,args=(12,))
 
@@ -37,7 +37,7 @@ if __name__=="__main__":
     t1.start()
     t2.start()
 
-    t1.join()
+    t1.join() #tell main to wait for thread1 to completely execute
     t2.join()
 
     print("T1 and T2 done,hence main thread exitting...")
@@ -51,7 +51,7 @@ def f1():
 x=20
 def f1():
     x+=1
-    print(x)->error : global variables can only be accessed and not manipulated without explicitly mentioning that tey are global variables
+    print(x)->error : global variables can only be accessed and not manipulated without explicitly mentioning that they are global variables
 
 def f1():
     global x
@@ -106,11 +106,16 @@ th.start()
 print("state of ",th.getName(),"is ",th.is_alive())
 print("Current number of threads = ",threading.active_count()) #total number of active threads in the program = 1 + 1 = 2
 
-th.join()
+th.join() #th thread dies
 print("after joining,si the thread still alive?",th.is_alive())
 
 #main thread is executing no matter what
 print("Main thread",threading.main_thread().name)
+
+'''
+Number of threads alive - active_count()
+is a thread alive? - is_alive() 
+'''
 
 
 

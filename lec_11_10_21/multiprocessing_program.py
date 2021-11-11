@@ -1,6 +1,6 @@
 '''
 ->multiprocessing : allows more than one **process** at the same time
-->if single process is present,then if we run multiple process on it,it has to interrupt processes to achieve concurrency
+->if single processor is present,then if we run multiple process on it,it has to interrupt/preempt processes to achieve concurrency
 ->if we have multiple processrs,then each processor can work with one process
 '''
 import multiprocessing
