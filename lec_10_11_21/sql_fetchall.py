@@ -1,4 +1,6 @@
 '''
+sqllite3 functions:
+
 cur.fetchall() - fetch all rows of a query result - returns it as list of tuples - [(),(),()...] => empty list if there is no record to fetch - []
 
 cur.fetchmany(_size) => fetch the req number of rows as a list if tuples.
