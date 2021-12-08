@@ -5,6 +5,7 @@ NOT for multiple **client-server architecture** like webapps but only for single
 
 
 sqlite3.connect() - connection to the database eg:foodsystem.db on the disk.
+if db doesnt exist,then create and return it.
 
 use ":memory" to ceate db in RAM with unique id
 
@@ -17,8 +18,6 @@ connection.commit() - commit transaction : if not called,then it wont be commite
 connection.rollback() - rollback to the last successfull commit
 
 connection.close() - close the connection
-
-if db doesnt exist,then ceate and return it
 
 NOTE:possible to execute commands without using cursor but using connection object itself
 '''

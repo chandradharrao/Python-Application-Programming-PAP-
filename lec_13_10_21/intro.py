@@ -1,7 +1,8 @@
 '''
-locks : impose limits on the shared resource : syn mechanizm
-Class Lock ->acquire and release methods
-Class "Value" -> simulate shared variable which itself is synchrized until mentioned with the Lock=False arg
+locks : impose limits on the shared resource : sync mechanizm
+Class Lock -> acquire and release methods
+Class "Value" -> simulate shared variable which itself is synchrized until mentioned with the Lock=False arg where the Lock is removed.
+
 '''
 
 #without the lock mechanism
@@ -18,6 +19,7 @@ def withdraw(total):
     for j in range(100):
         sleep(0.01)
         total.value -= 5
+    return total
 
 if __name__=="__main__":
     total = Value("i",500,lock=False) #integer of value 500

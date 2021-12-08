@@ -5,7 +5,7 @@ consumer : consume data -> remove from buff
 Hindrance : consumption from empty buffer
             producer produces into full buff
 
-global buffer shared variable
+global buffer - shared variable
 producer thread
 consumer thread
 
@@ -13,8 +13,8 @@ Suppose **consumer** has consumed entire buffer and **producer** is still execut
 
 Hence we need to use **condition objects** which allows one or more threads to wait until NOTIFIED by another thread ie consumer should wait until notified by the producer.Hence the two threads can **communicate** between each other.
 
-Hence we can assocate a condition with tasks. 
-acquire() and release() with the lock
+-Hence we can associate a condition with tasks. 
+-acquire() and release() with the lock
 '''
 
 #using condition object
@@ -42,6 +42,7 @@ class ProducerThread(Thread): #inherit from thread class
             #acquire lock before using wait() or notify() ONLY AFTER acquiring the lock
             condition.acquire()
             global buffer
+            
             if len(buffer)==buffer_max:
                 print("Queue full,hence producer going to sleep...")
                 condition.wait() #block the thread and make it wait until notified by consumer ie dont execute further until woken
@@ -61,10 +62,10 @@ class ConsumrThread(Thread):
     def run(self):
         #consume every 1 second
         while True:
-            condition.acquire() #**cannot wait before acquiring lock**
+            condition.acquire() #**cannot do .wait() before acquiring lock**
             if not buffer: #if no items
                 print("Consumer gong to sleep...")
-                condition.wait()
+                condition.wait() #do infinite waiting
 
             #if buffer is not empty or thread is woken up
             print("Item was pushed to queue.Hence waking up..")

@@ -1,6 +1,6 @@
 '''
 process : program under execution.
-Code + PC + registers + stacks and so one..
+Code + PC + registers + stacks and so on..
 
 thread : lightweight process handled by scheduler
 share code segment,data segment,files etc but has its own register stack,counter etc
@@ -12,7 +12,9 @@ ti.start()
 .
 ti.join() ****imp***
 
-main thread runs on its own without waiting for the inner threads to finish execution and hence terminates itself.Because main thread's job is only to create threads and start them.Hence make main thread wait for t1 and t2 to complete.
+main thread runs on its own without waiting for the inner threads to finish execution and hence terminates itself.
+Because main thread's job is only to create threads and start them.Hence make main thread wait for t1 and t2 to complete.
+
 '''
 import threading
 import time
@@ -46,7 +48,7 @@ if __name__=="__main__":
 x=20 #global
 def f1():
     x=30 #local
-    print(x)->30
+    print(x)->30 #local preference
 
 x=20
 def f1():
@@ -75,7 +77,7 @@ def main():
     global x
     x=0
 
-    #both tring to inc same shared global variable -> hence use locks
+    #both trying to inc same shared global variable -> hence use locks
     t1 = threading.Thread(target=taskOfThread)
     t2 = threading.Thread(target=taskOfThread)
 
@@ -91,23 +93,23 @@ if __name__=="__main__":
         print(i,x)
 
 '''
-Main thread is present by default
+Main thread is run by default
 along with that there would be the threads created by us
 '''
 import threading
 import time
 
 def iAmLegend():
-    time.sleept(10)
+    time.sleep(10)
     print("thread")
 
 th = threading.Thread(target=iAmLegend,name="thread_1")
 th.start()
 print("state of ",th.getName(),"is ",th.is_alive())
-print("Current number of threads = ",threading.active_count()) #total number of active threads in the program = 1 + 1 = 2
+print("Current number of threads = ",threading.active_count()) #total number of active threads in the program = 1(main thread) + 1 = 2
 
 th.join() #th thread dies
-print("after joining,si the thread still alive?",th.is_alive())
+print("after joining,is the thread still alive?",th.is_alive())
 
 #main thread is executing no matter what
 print("Main thread",threading.main_thread().name)
