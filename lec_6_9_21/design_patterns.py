@@ -27,7 +27,7 @@ class GameManager:
 
     #class emthod
     @classmethod
-    def get_instance(): #get which instance
+    def get_instance(): #either return a new instance or the existing instance when called
         if GameManager.instance != None:
             GameManager() #create object if not already present
         return GameManager.instance

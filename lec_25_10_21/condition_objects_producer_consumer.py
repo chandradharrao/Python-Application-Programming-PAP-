@@ -5,7 +5,8 @@ consumer : consume data -> remove from buff
 Hindrance : consumption from empty buffer
             producer produces into full buff
 
-global buffer - shared variable
+objects:
+global buffer -> shared variable
 producer thread
 consumer thread
 

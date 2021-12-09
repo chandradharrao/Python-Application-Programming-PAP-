@@ -115,8 +115,10 @@ print("after joining,is the thread still alive?",th.is_alive())
 print("Main thread",threading.main_thread().name)
 
 '''
-Number of threads alive - active_count()
-is a thread alive? - is_alive() 
+Number of threads alive - activeCount()
+Is that thread alive? - is_alive() 
+Name of the specific thread - getName()
+Name of main thread threading.main_thread().name
 '''
 
 

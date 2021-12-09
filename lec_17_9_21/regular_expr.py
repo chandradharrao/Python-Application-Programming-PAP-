@@ -20,7 +20,7 @@ pattern = re.compile('abc')
 #finditer - iterate through text and search for ALL matching pattern 
 matches =pattern.finditer(sentence)
 for match in matches:
-    print(f"Found {sentence[match.span()[0]:match.span()[-1]]} @ {match.span()}") #span returns(startIndx,endIndx+1)
+    print(f"Found {sentence[match.span()[0]:match.span()[-1]]} @ {match.span()}") #span returns [startIndx,endIndx+1]
 
 print(sentence[0:3]) #(startIndx,endIndx+1)
 

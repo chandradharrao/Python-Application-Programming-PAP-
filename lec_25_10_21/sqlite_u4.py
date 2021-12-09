@@ -35,5 +35,6 @@ info=('chandra',21)
 cur.execute('insert into student(name,age) values (?,?)',info)
 
 rows = cur.execute("select * from student")
+print(rows)
 for row in rows:
     print(row)

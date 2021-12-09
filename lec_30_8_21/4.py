@@ -34,3 +34,9 @@ except:
 
 Movie.class_method()
 Movie.static_methods()
+
+#classmethods can access only class variables using cls.It cannot access instance variables
+
+#staticmethods cannot access niether class variables nor instance variables
+
+#instance method can access both class and instance variables

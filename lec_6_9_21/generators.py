@@ -1,11 +1,11 @@
-#yields a value from an iterator
+#yields a value.Hence the function becomes an iterator.
 #generator funcs allow us to declare a function to behave as an iterator
 #the generator func is a normal func except that it has yield keyword
-#the position of the yield statement is remembered by the generator
+#the position of the yield statement in the code of the generator function is remembered by the generator
 #when generator is exhausted,it raises stopIteration exception
 #they are lazy
 
-def shoot():
+def shoot(): #this function has become an iterable function due to yield
     print("hi")
     yield 100 #control returned to next statmeent
 

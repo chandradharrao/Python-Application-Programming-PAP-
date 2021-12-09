@@ -1,7 +1,7 @@
 '''
 locks : impose limits on the shared resource : sync mechanizm
 Class Lock -> acquire and release methods
-Class "Value" -> simulate shared variable which itself is synchrized until mentioned with the Lock=False arg where the Lock is removed.
+Class "Value" -> simulate shared variable which is not atomic by default even though it provides ability to use locks.
 
 '''
 
@@ -22,7 +22,7 @@ def withdraw(total):
     return total
 
 if __name__=="__main__":
-    total = Value("i",500,lock=False) #integer of value 500
+    total = Value("i",500) #integer of value 500
 
     for i in range(5):
         add = Process(target=deposit,args=(total,))

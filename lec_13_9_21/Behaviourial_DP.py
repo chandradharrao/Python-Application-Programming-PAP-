@@ -8,7 +8,7 @@ Publisher publishes notification to subscribers
 Youtube analogy : youtube.com : users subscribe to interested channels and recieve notifications when the youtube channel uploads.
 '''
 
-#observer desiign pattern
+#observer template
 class Publisher:
     def __init__(self):
         pass
@@ -19,10 +19,10 @@ class Publisher:
     def notifyAll(self):
         pass
 
+#subscriber template
 class Subsciber:
     def __init__(self,name):
         pass
-
     def notifyMe(self,postData):
         pass
 

@@ -1,3 +1,12 @@
+1.finditer - list of match objects ie list(re.match object,span : <start indx,end indx>, word)
+2.search - finditer but only first occurence ie single match object or none if not found
+also search.start():starting index and search.end():ending index of the match
+3.Findall - finditer but INSTEAD of match object,it gives us just plain old string of the match.Hence no start and end index
+4.match - search but the pattern SHOULD appear only in the begenning.Else return None
+5.re.ignorecase : case insenstivie
+6.re.MULTILINE : without this, ^ and $ work for entire string but now will match for every new line
+7.re.DOTALL : without this, "." matches everything except new line but with this,it matches new line also
+8.re.VERBOSE : more verbose description
 
 \d - matches digits b/w 0 to 9
 \D - macthes !a digit
@@ -6,17 +15,27 @@
 
 \bword_to_match - word boundary - words end with \n or space only.
 
-\Bword_to_match - not a word boundary - selects all words that match word_to_match iff they are not seperated by \n or space ie not a word boundary
+\Bword_to_match - words which is not a word boundary - selects all words that match word_to_match iff they are not seperated by \n or space ie not a word boundary
 
 ^word_to_match - match sentence if begenning of a string begins with word_to_match
+^word_to_match - display word only if it is the starting of the string (finditer)
 
-$word_to_match -match string if end of string is word_to_match
+word_to_match$ -match string if end of string is word_to_match
+word_to_match$ - match word only if the string end with the word (finditer)
 
-\s - match whitespaces like space,\n
+\s - match whitespaces like space,\n,\t
 \S - not a white space
 
-[to_match] - character set to be matched for a single character
+[to_match_characters] - character set to be matched for a single character : either of the characters in the caracter set nees ti be matched
+"-" can be used between characters to match a range
 
-subset_expr{n} - number of subset_expr to be matched
+group[0]->entire matched string
+group[1]->1st group
+group[2]->2nd group in the string
+.....
+
+quantifiers:
+subset_expr{n} - exact number of subset_expr to be matched
+subset_expr{n1,n2} match n1 to n2 times the preceeding token
 
 [^char] - means dont match the char

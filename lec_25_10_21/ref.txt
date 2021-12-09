@@ -1,0 +1,11 @@
+fetchall() - gives an iterator that yields a tuple.
+For exam : it return a list of tuples. Eg [(chandra,69),(rahane,55)]
+If no rows then it returns an empty list g: []
+
+fetchone() - just gives a single tuple and NOT a list.
+
+fetchmany(size) - fetches rows specified by size as list of tuples Eg:[(virat,-1)]
+
+if fetchone and fetchmany are queries repeatedly,then it fetches next set of rows
+
+if no tuples,then return nothing
