@@ -6,7 +6,7 @@ Quantifiers:
     * - 0 or more
     + - 1 or more
     ? - 0 or one 
-    {m,n} - range of number between m and n
+    x{m,n} - match x if found in the range of number between m and n
     '''
 
 names='''
@@ -22,6 +22,7 @@ Ms. Mahima
 '''
 
 '''
+steps to match a male name:
 match Mr and Mr.
 Match white space
 Match Remaining entire first name 
@@ -29,6 +30,7 @@ Match Remaining entire first name
 pattern = re.compile(r"Mr\.?\s[A-Z]\w*")
 
 '''
+steps to match a female name too:
 match Mr,Mr.,Mrs.,Ms.
 match white space
 match entire first name
@@ -60,9 +62,15 @@ https://www.irctc.co.in
 http://mahima.com
 http://guru-99.in
 '''
-toMatch = r'http[s]?://[a-zA-Z0-9.-]+\.[a-zA-z]+'
+# toMatch = r'http[s]?://[a-zA-Z0-9.-]+\.[a-zA-z]+'
+toMatch = r'(http|https):\/\/(www)?\.?(\w+)[\w.-]+\.(com|in|edu)'
 pattern = re.compile(toMatch)
 
 matches = pattern.finditer(urls)
 for m in matches:
-    print(m.group(0)) #print the groups present : here only one group since we havent used any groups
+    print(m.group(0)) #print the entire matched string
+    print(m.group(1)) #1st group
+    print(m.group(2)) #2nd group
+    print(m.group(3))
+    print(m.group(4))
+    print("*****************")

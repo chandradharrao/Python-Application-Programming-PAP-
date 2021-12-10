@@ -1,8 +1,20 @@
-#variables - instance and class/static variables
-#class var - inside cass but outside function,belongs to entire class
+#eg:https://colab.research.google.com/drive/17fJvV7E84S5AL-AFdYkdLN_A8yo5elZg#scrollTo=YV-slKxVTchc
 
-#methods - instance methods,class methods,static methods
-#static method is not related to ie independent to any class,any instance is called static method
+#variables types - instance,class and static variables
+    #class var - inside class but outside functions,belongs to entire class
+    #instance variables - belongs to only the instances
+
+#methods types - instance methods,class methods,static methods
+    #static method cannot use either class variable nor instance variables
+    #class methods cannot use instance variables but can use class varaibles using "cls" since they don't take in "self" as parameter
+    #instance methods can use both class variables and instance variables
+
+#classmethods can access only class variables using cls.It cannot access instance variables
+
+#staticmethods cannot access niether class variables nor instance variables
+
+#instance method can access both class and instance variables
+
 class Movie:
     num_of_movie_objs = 0
 
@@ -34,9 +46,3 @@ except:
 
 Movie.class_method()
 Movie.static_methods()
-
-#classmethods can access only class variables using cls.It cannot access instance variables
-
-#staticmethods cannot access niether class variables nor instance variables
-
-#instance method can access both class and instance variables

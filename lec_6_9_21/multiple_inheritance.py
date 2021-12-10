@@ -27,7 +27,7 @@ class Child(Father):
         print("In method2")
 
 #derived class with multiple inheritance
-#MRo - Father and then Mother
+#MRO - Father and then Mother
 class Offsprint(Father,Mother):
     print("in m3")
 

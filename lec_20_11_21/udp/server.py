@@ -2,6 +2,8 @@
 '''
 no streaming of packets between client and server
 no guarentee of packet delivery
+
+no listening or establishing connection with client
 '''
 
 

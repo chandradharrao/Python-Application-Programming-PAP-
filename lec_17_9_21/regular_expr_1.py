@@ -12,7 +12,7 @@ import re
 
 ^word_to_match - match sentence if begenning of a string begins with word_to_match
 
-$word_to_match -match string if end of string is word_to_match
+word_to_match$ -match string if end of string is word_to_match
 
 \s - match whitespaces like space,\n
 \S - not a white space

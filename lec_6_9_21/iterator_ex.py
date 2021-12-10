@@ -17,8 +17,8 @@ class powTwo:
         else:
             raise StopIteration
 
-p = powTwo(10)
-p_iterable = iter(p)
+p = powTwo(10) #create the object
+p_iterable = iter(p) #create the iterable
 
 while True:
     try:

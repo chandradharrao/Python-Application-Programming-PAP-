@@ -17,7 +17,7 @@ abc
 #re.compile converts pattern we want to search for to a variable so that it can be used later - important for exam
 pattern = re.compile('abc')
 
-#finditer - iterate through text and search for ALL matching pattern 
+#finditer - iterate through text and search for ALL matching pattern and return list of match objects
 matches =pattern.finditer(sentence)
 for match in matches:
     print(f"Found {sentence[match.span()[0]:match.span()[-1]]} @ {match.span()}") #span returns [startIndx,endIndx+1]

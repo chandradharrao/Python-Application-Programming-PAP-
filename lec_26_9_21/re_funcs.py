@@ -30,7 +30,7 @@ for m in ms:
     print(txt[m.start():m.end()])
 
 '''
-re.match return a re.match object only if the pattern is in the exact begenningof the text only,else it will return none
+re.match return a re.match object only if the pattern is in the exact begenning of the text only,else it will return none
 '''
 pattern=re.compile(r"i")
 m = re.match(pattern,txt)

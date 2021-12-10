@@ -7,7 +7,7 @@ from sys import version
 txt="UPSC Exams.\nKCET Exams"
 pattern=r'(^\w+)|(\w+\S*$)'
 single_line = re.compile(pattern)
-multi_line = re.compile(pattern,re.MULTILINE) #^ will apply for every line along with start of string
+multi_line = re.compile(pattern,re.MULTILINE) #^  will apply for every line along with start of string
 
 for m in single_line.findall(txt):
     print(m)

@@ -1,5 +1,4 @@
 #communication b/w classes and objects
-#decoupling b/w implementation and interface
 
 '''
 Objects- subscribe to publisher class to recieve notifications and unsubscribe when not interested.
@@ -72,4 +71,4 @@ if __name__ == "__main__":
     Tseries.newNotification("Tum hi ho song released")
 
     Tseries.unubscibe(u3)
-    Tseries.newNotification("Channa mereya ho song released")
+    Tseries.newNotification("Channa mereya song released")
